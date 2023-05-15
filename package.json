@@ -1,0 +1,15 @@
+{
+  "name": "@codepen/tree-sitter-stylus",
+  "version": "1.0.0",
+  "main": "bindings/node",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "nan": "^2.14.1"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.0"
+  },
+  "scripts": {
+    "test": "tree-sitter generate && tree-sitter test"
+  }
+}

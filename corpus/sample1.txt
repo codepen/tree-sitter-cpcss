@@ -1,0 +1,57 @@
+============================
+Sample 1
+============================
+// Excerpted from https://codepen.io/kristen17/pen/OJwZPpv
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Poppins:wght@300;400;500;700&display=swap')
+@import 'jeet'
+@import 'nib'
+
+body
+  background: #ddd6f3
+  background: linear-gradient(to right, #ff9b9b, #ffd6d5)
+  width: calc(min(1440px, 90%))
+  font-weight: 300
+
+main
+  box-shadow: 0px 6px 18px #00000029
+
+  @media screen and (min-width: 900px)
+    flex-direction: row
+
+  .order
+    position: absolute
+    transform: translate(-50%, -50%)
+    background: #fff
+
+    @media screen and (min-width: 900px)
+      left: 75%
+      transform: translate(-75%, -50%)
+      display: block
+
+  hr
+    background: #cecece
+    width: 30%
+
+    @media screen and (min-width: 600px)
+      transform: rotate(90deg)
+
+li:not(:last-child):after
+  content: ''
+  position: absolute
+  left: 12.5px
+  top: 50%
+
+---
+(doc
+  (comment_line)
+  (import
+    (url
+      (string)))
+  (import
+    (string))
+  (import
+    (string))
+  (tbd)
+  (string)
+  (tbd))
