@@ -23,6 +23,7 @@ module.exports = grammar({
     import_keywords: $ => seq('(', repeat($.import_keyword), ')'),
     import: $ =>
       seq(
+        // Stylus supports both `@import` and `@require` for imports.  The syntax is the same
         choice('@import', '@require'),
         optional($.import_keywords),
         choice($.url, $.string),

@@ -1,15 +1,80 @@
 ============================
 Strings
 ============================
-
 a
-  b: '';
-  c: '\'hi\'';
+  b ''
+  c '\'hi\''
 
 ---
 (doc
   (tbd)
   (string)
   (tbd)
+  (string))
+
+=======================================
+Comments right after numbers
+=======================================
+
+/* comment block */
+hello  // comment line
+a
+	shape-outside circle(20em/*=*/at 50% 50%)  // OKAY
+	shape-outside inset(1em, 1em, 1em, 1em)
+
+
+/** // a comment **/
+// /* Another comment */
+
+---
+
+(doc
+  (comment_block)
+  (tbd)
+  (comment_line)
+  (tbd)
+  (comment_block)
+  (tbd)
+  (comment_line)
+  (tbd)
+  (comment_block)
+  (comment_line))
+
+============================
+URLs
+============================
+
+a
+  b http://something-else?foo=bar
+
+
+---
+
+(doc
+  (tbd)
+  (comment_line))
+
+============================
+Imports
+============================
+
+@import "http://foo.bar"
+
+a
+  b ''
+  @import (inline, once) "foo.bar"
+  c '\'hi\''
+
+---
+
+(doc
+  (import
+    (string))  (tbd)
   (string)
-  (tbd))
+  (import
+    (import_keywords
+      (import_keyword)
+      (import_keyword))
+    (string))
+  (tbd)
+  (string))
