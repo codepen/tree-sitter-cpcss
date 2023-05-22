@@ -8,7 +8,7 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "import"
+            "name": "import_statement"
           },
           {
             "type": "SYMBOL",
@@ -40,6 +40,49 @@
         }
       }
     },
+    "import_reference": {
+      "type": "PATTERN",
+      "value": "[^\"'\\n]*"
+    },
+    "quoted_import_reference": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "'"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "import_reference"
+            },
+            {
+              "type": "STRING",
+              "value": "'"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "\""
+            },
+            {
+              "type": "SYMBOL",
+              "name": "import_reference"
+            },
+            {
+              "type": "STRING",
+              "value": "\""
+            }
+          ]
+        }
+      ]
+    },
     "url": {
       "type": "SEQ",
       "members": [
@@ -53,7 +96,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "string"
+          "name": "quoted_import_reference"
         },
         {
           "type": "STRING",
@@ -102,7 +145,7 @@
         }
       ]
     },
-    "import": {
+    "import_statement": {
       "type": "SEQ",
       "members": [
         {
@@ -139,7 +182,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "string"
+              "name": "quoted_import_reference"
             }
           ]
         },

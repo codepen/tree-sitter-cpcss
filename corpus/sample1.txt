@@ -45,13 +45,16 @@ li:not(:last-child):after
 ---
 (doc
   (comment_line)
-  (import
+  (import_statement
     (url
-      (string)))
-  (import
-    (string))
-  (import
-    (string))
+      (quoted_import_reference
+      (import_reference))))
+  (import_statement
+    (quoted_import_reference
+      (import_reference)))
+  (import_statement
+    (quoted_import_reference
+      (import_reference)))
   (tbd)
   (string)
   (tbd))
