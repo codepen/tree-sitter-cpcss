@@ -68,13 +68,16 @@ a
 ---
 
 (doc
-  (import
-    (string))  (tbd)
+  (import_statement
+    (quoted_import_reference
+      (import_reference)))
+  (tbd)
   (string)
-  (import
+  (import_statement
     (import_keywords
       (import_keyword)
       (import_keyword))
-    (string))
+    (quoted_import_reference
+      (import_reference)))
   (tbd)
   (string))

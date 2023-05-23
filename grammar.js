@@ -9,24 +9,37 @@ module.exports = grammar({
   rules: {
     doc: $ =>
       repeat(
-        choice($.import, $.comment_block, $.comment_line, $.string, $.tbd)
+        choice(
+          $.import_statement,
+          $.comment_block,
+          $.comment_line,
+          $.string,
+          $.tbd
+        )
       ),
 
     // Catch-all rule for constructs we don't care about
     tbd: $ => prec(-1, repeat1(/./)),
 
+    import_reference: $ => /[^"'\n]*/,
+    quoted_import_reference: $ =>
+      choice(
+        seq("'", $.import_reference, "'"),
+        seq('"', $.import_reference, '"')
+      ),
+
     // URL(...)
-    url: $ => seq('url', '(', $.string, ')'),
+    url: $ => seq('url', '(', $.quoted_import_reference, ')'),
 
     // Imports
     import_keyword: $ => seq(/\w+/, optional(',')),
     import_keywords: $ => seq('(', repeat($.import_keyword), ')'),
-    import: $ =>
+    import_statement: $ =>
       seq(
         // Stylus supports both `@import` and `@require` for imports.  The syntax is the same
         choice('@import', '@require'),
         optional($.import_keywords),
-        choice($.url, $.string),
+        choice($.url, $.quoted_import_reference),
         optional(';')
       ),
 
