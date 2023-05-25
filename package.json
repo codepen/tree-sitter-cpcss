@@ -1,5 +1,5 @@
 {
-  "name": "@codepen/tree-sitter-stylus",
+  "name": "@codepen/tree-sitter-cssimports",
   "version": "1.0.0",
   "main": "bindings/node",
   "license": "UNLICENSED",

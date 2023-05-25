@@ -7,9 +7,7 @@ a
 
 ---
 (doc
-  (tbd)
   (string)
-  (tbd)
   (string))
 
 =======================================
@@ -30,54 +28,38 @@ a
 
 (doc
   (comment_block)
-  (tbd)
   (comment_line)
-  (tbd)
   (comment_block)
-  (tbd)
   (comment_line)
-  (tbd)
   (comment_block)
   (comment_line))
 
 ============================
-URLs
+Stylus URLs
 ============================
-
 a
   b http://something-else?foo=bar
-
-
 ---
-
 (doc
-  (tbd)
   (comment_line))
 
 ============================
-Imports
+Stylus @import
 ============================
-
 @import "http://foo.bar"
 
 a
   b ''
   @import (inline, once) "foo.bar"
   c '\'hi\''
-
 ---
-
 (doc
   (import_statement
-    (quoted_import_reference
-      (import_reference)))
-  (tbd)
+    (import_reference))
   (string)
   (import_statement
-    (import_keywords
-      (import_keyword)
-      (import_keyword))
-    (quoted_import_reference
-      (import_reference)))
-  (tbd)
+    (less_keywords
+      (less_keyword)
+      (less_keyword))
+    (import_reference))
   (string))

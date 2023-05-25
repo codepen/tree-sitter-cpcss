@@ -1,5 +1,5 @@
 ============================
-Sample 1
+Stylus Sample
 ============================
 // Excerpted from https://codepen.io/kristen17/pen/OJwZPpv
 
@@ -45,16 +45,8 @@ li:not(:last-child):after
 ---
 (doc
   (comment_line)
-  (import_statement
-    (url
-      (quoted_import_reference
-      (import_reference))))
-  (import_statement
-    (quoted_import_reference
-      (import_reference)))
-  (import_statement
-    (quoted_import_reference
-      (import_reference)))
-  (tbd)
+  (import_statement (import_reference))
+  (import_statement (import_reference))
+  (import_statement (import_reference))
   (string)
-  (tbd))
+)
