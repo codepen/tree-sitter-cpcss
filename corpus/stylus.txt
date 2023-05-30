@@ -27,12 +27,12 @@ a
 ---
 
 (doc
-  (comment_block)
-  (comment_line)
-  (comment_block)
-  (comment_line)
-  (comment_block)
-  (comment_line))
+  (comment)
+  (comment)
+  (comment)
+  (comment)
+  (comment)
+  (comment))
 
 ============================
 Stylus URLs
@@ -41,7 +41,7 @@ a
   b http://something-else?foo=bar
 ---
 (doc
-  (comment_line))
+  (comment))
 
 ============================
 Stylus @import

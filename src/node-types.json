@@ -1,5 +1,10 @@
 [
   {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "doc",
     "named": true,
     "fields": {},
@@ -8,11 +13,7 @@
       "required": false,
       "types": [
         {
-          "type": "comment_block",
-          "named": true
-        },
-        {
-          "type": "comment_line",
+          "type": "comment",
           "named": true
         },
         {
@@ -86,6 +87,14 @@
     "named": false
   },
   {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": "/*",
+    "named": false
+  },
+  {
     "type": "@forward",
     "named": false
   },
@@ -100,14 +109,6 @@
   {
     "type": "@use",
     "named": false
-  },
-  {
-    "type": "comment_block",
-    "named": true
-  },
-  {
-    "type": "comment_line",
-    "named": true
   },
   {
     "type": "import_reference",

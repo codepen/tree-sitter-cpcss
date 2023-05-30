@@ -1,5 +1,6 @@
 ============================
 Stylus Sample
+Stylus Sample
 ============================
 // Excerpted from https://codepen.io/kristen17/pen/OJwZPpv
 
@@ -44,7 +45,7 @@ li:not(:last-child):after
 
 ---
 (doc
-  (comment_line)
+  (comment)
   (import_statement (import_reference))
   (import_statement (import_reference))
   (import_statement (import_reference))
