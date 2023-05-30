@@ -1,7 +1,7 @@
 // Grammar for extracting dependencies out of CSS files
 
 module.exports = grammar({
-  name: 'cssimports',
+  name: 'cpcss',
 
   extras: $ => [/[ \t\r\n]/], // "\s" = [ \t\r\n], but we don't want to match newlines
 

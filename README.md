@@ -1,4 +1,4 @@
-# tree-sitter-cssimports Unified CSS dependency extraction parser
+# tree-sitter-cpcss Unified CSS dependency extraction parser
 
 ## Notes on SCSS from @shshaw
 

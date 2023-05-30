@@ -1,5 +1,5 @@
 {
-  "name": "cssimports",
+  "name": "cpcss",
   "rules": {
     "doc": {
       "type": "REPEAT",
