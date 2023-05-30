@@ -3,19 +3,10 @@
 module.exports = grammar({
   name: 'cpcss',
 
-  extras: $ => [/[ \t\r\n]/], // "\s" = [ \t\r\n], but we don't want to match newlines
+  extras: $ => [/\s/], // "\s" = [ \t\r\n], but we don't want to match newlines
 
   rules: {
-    doc: $ =>
-      repeat(
-        choice(
-          $.import_statement,
-          $.comment_block,
-          $.comment_line,
-          $.string,
-          $._tbd
-        )
-      ),
+    doc: $ => repeat(choice($.import_statement, $.comment, $.string, $._tbd)),
 
     // Catch-all rule for constructs we don't care about
     _tbd: $ => prec(-1, repeat1(choice(/./))),
@@ -54,11 +45,14 @@ module.exports = grammar({
         )
       ),
 
-    // `/**... */`-style comments.  Regex is from tree-sitter-css. 'Not entirely
-    // sure why it works, but it does.
-    comment_block: $ => token(seq('/*', /[^*]*\*+([^/*][^*]*\*+)*/, '/')),
+    // `/**... */`-style comments.  Regex is from tree-sitter-javascript, which
+    // references this SO answer:
+    // http://stackoverflow.com/questions/13014947/regex-to-match-a-c-style-multiline-comment/36328890#36328890
+    _comment_block: $ => seq('/*', /[^*]*\*+([^/*][^*]*\*+)*/, '/'),
 
     // `// ...`-style comments
-    comment_line: $ => token(seq('//', /.+/)),
+    _comment_line: $ => token(seq('//', /.+/)),
+
+    comment: $ => choice($._comment_block, $._comment_line),
   },
 });

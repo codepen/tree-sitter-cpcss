@@ -12,11 +12,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "comment_block"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "comment_line"
+            "name": "comment"
           },
           {
             "type": "SYMBOL",
@@ -271,27 +267,24 @@
         ]
       }
     },
-    "comment_block": {
-      "type": "TOKEN",
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "/*"
-          },
-          {
-            "type": "PATTERN",
-            "value": "[^*]*\\*+([^/*][^*]*\\*+)*"
-          },
-          {
-            "type": "STRING",
-            "value": "/"
-          }
-        ]
-      }
+    "_comment_block": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "/*"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^*]*\\*+([^/*][^*]*\\*+)*"
+        },
+        {
+          "type": "STRING",
+          "value": "/"
+        }
+      ]
     },
-    "comment_line": {
+    "_comment_line": {
       "type": "TOKEN",
       "content": {
         "type": "SEQ",
@@ -306,12 +299,25 @@
           }
         ]
       }
+    },
+    "comment": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_comment_block"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comment_line"
+        }
+      ]
     }
   },
   "extras": [
     {
       "type": "PATTERN",
-      "value": "[ \\t\\r\\n]"
+      "value": "\\s"
     }
   ],
   "conflicts": [],

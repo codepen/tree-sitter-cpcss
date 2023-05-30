@@ -44,7 +44,7 @@ li:not(:last-child):after
 
 ---
 (doc
-  (comment_line)
+  (comment)
   (import_statement (import_reference))
   (import_statement (import_reference))
   (import_statement (import_reference))

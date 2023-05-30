@@ -1,0 +1,25 @@
+============================
+CSS @import
+============================
+/* @import "thing" */
+
+@import url("fineprint.css") print;
+@import url("bluish.css") print, screen;
+@import "common.css" screen;
+@import url("landscape.css") screen and (orientation: landscape);
+@import url("gridy.css") supports(display: grid) screen and (max-width: 400px);
+@import url("flexy.css") supports(not (display: grid) and (display: flex)) screen and (max-width: 400px);
+
+{content: "@import url(\"blarg\")"}
+---
+
+(doc
+  (comment)
+  (import_statement (import_reference))
+  (import_statement (import_reference))
+  (import_statement (import_reference))
+  (import_statement (import_reference))
+  (import_statement (import_reference))
+  (import_statement (import_reference))
+  (string)
+)
