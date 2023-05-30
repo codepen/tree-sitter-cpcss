@@ -1,0 +1,40 @@
+==============================
+SCSS @import
+==============================
+@import 'custom.css';
+@import url("chrome://communicator/skin/");
+@import 'foundation/code', 'foundation/lists';
+@import "common.css" screen;
+@import url("fineprint.css") print;
+---
+(doc
+  (import_statement (import_reference))
+  (import_statement (import_reference))
+  (import_statement (import_reference) (import_reference))
+  (import_statement (import_reference))
+  (import_statement (import_reference))
+)
+
+==============================
+SCSS @use
+==============================
+@use 'custom.css';
+
+.inverse {
+  background-color: base.$primary-color;
+  color: white;
+}
+---
+(doc
+  (import_statement (import_reference))
+)
+
+==============================
+SCSS @forward
+==============================
+@forward 'custom.css';
+---
+(doc
+  (import_statement (import_reference))
+)
+

@@ -1,5 +1,5 @@
 {
-  "name": "@codepen/tree-sitter-stylus",
+  "name": "@codepen/tree-sitter-cpcss",
   "version": "1.0.0",
   "main": "bindings/node",
   "license": "UNLICENSED",
@@ -7,7 +7,7 @@
     "nan": "^2.14.1"
   },
   "devDependencies": {
-    "tree-sitter-cli": "^0.20.0"
+    "tree-sitter-cli": "0.20.8"
   },
   "scripts": {
     "test": "tree-sitter generate && tree-sitter test"

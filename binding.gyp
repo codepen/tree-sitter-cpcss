@@ -1,7 +1,7 @@
 {
   "targets": [
     {
-      "target_name": "tree_sitter_stylus_binding",
+      "target_name": "tree_sitter_cpcss_binding",
       "include_dirs": [
         "<!(node -e \"require('nan')\")",
         "src"

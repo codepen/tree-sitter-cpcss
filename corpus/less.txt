@@ -1,0 +1,22 @@
+============================
+Less @import
+============================
+@import "http://foo.bar";
+
+a {
+  b: '';
+  @import (inline, once) "foo.bar";
+  c: '\'hi\'';
+}
+
+---
+
+(doc
+  (import_statement (import_reference))
+  (string)
+  (import_statement
+    (less_keywords (less_keyword) (less_keyword))
+    (import_reference)
+  )
+  (string)
+)
