@@ -8,7 +8,8 @@ module.exports = grammar({
   extras: $ => [/\s/], // "\s" = [ \t\r\n], but we don't want to match newlines
 
   rules: {
-    doc: $ => repeat(choice($.import_statement, $.comment, $.string, $._tbd)),
+    doc: $ =>
+      repeat(choice($.import_statement, $.url, $.comment, $.string, $._tbd)),
 
     // Catch-all rule for constructs we don't care about
     _tbd: $ => prec(-1, repeat1(choice(/./))),
@@ -16,7 +17,14 @@ module.exports = grammar({
     // Imports
     import_statement: $ =>
       seq(
-        choice('@import', '@use', '@forward', '@require'),
+        choice(
+          '@import', // CSS
+          '@namespace', // CSS (xml namespaces)
+          '@document', // CSS (deprecated)
+          '@use', // Sass
+          '@forward', // Sass
+          '@require' // Stylus
+        ),
         optional($.less_keywords),
         $._imported,
         optional(repeat(seq(',', $._imported)))
@@ -24,7 +32,17 @@ module.exports = grammar({
 
     _imported: $ => choice($._url, $._quoted_import_reference),
 
-    _url: $ => seq('url', '(', $._quoted_import_reference, ')'),
+    _url: $ =>
+      seq(
+        'url(',
+        choice(
+          $._quoted_import_reference,
+          alias(/[^)\n]*/, $.import_reference)
+        ),
+        ')'
+      ),
+
+    url: $ => $._url,
 
     import_reference: $ => /[^"'\n]*/,
 
