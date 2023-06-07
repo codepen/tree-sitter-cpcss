@@ -1,0 +1,75 @@
+============================
+CSS urls
+============================
+/* Samples from https://developer.mozilla.org/en-US/docs/Web/CSS/url */
+
+url(https://example.com/images/myImg.jpg);
+url(data:image/png;base64,iRxVB0…);
+url(myFont.woff);
+url(#IDofSVGpath);
+
+/* associated properties */
+background-image: url("star.gif");
+list-style-image: url('../images/bullet.jpg');
+content: url("pdficon.jpg");
+cursor: url(mycursor.cur);
+border-image-source: url(/media/diamonds.png);
+src: url('fantasticfont.woff');
+offset-path: url(#path);
+mask-image: url("masks.svg#mask1");
+
+/* Properties with fallbacks */
+cursor: url(pointer.cur), pointer;
+
+/* Associated short-hand properties */
+background: url('star.gif') bottom right repeat-x blue;
+border-image: url("/media/diamonds.png") 30 fill / 30px / 30px space;
+
+/* As a parameter in another CSS function */
+background-image: cross-fade(20% url(first.png), url(second.png));
+mask-image: image(url(mask.png), skyblue, linear-gradient(rgba(0, 0, 0, 1.0), transparent));
+
+/* as part of a non-shorthand multiple value */
+content: url(star.svg) url(star.svg) url(star.svg) url(star.svg) url(star.svg);
+
+/* at-rules */
+@document url("https://www.example.com/") { /* … */ }
+@import url("https://www.example.com/style.css");
+@namespace url(http://www.w3.org/1999/xhtml);
+---
+(doc
+  (comment)
+  (url (import_reference))
+  (url (import_reference))
+  (url (import_reference))
+  (url (import_reference))
+  (comment)
+  (url (import_reference))
+  (url (import_reference))
+  (url (import_reference))
+  (url (import_reference))
+  (url (import_reference))
+  (url (import_reference))
+  (url (import_reference))
+  (url (import_reference))
+  (comment)
+  (url (import_reference))
+  (comment)
+  (url (import_reference))
+  (url (import_reference))
+  (comment)
+  (url (import_reference))
+  (url (import_reference))
+  (url (import_reference))
+  (comment)
+  (url (import_reference))
+  (url (import_reference))
+  (url (import_reference))
+  (url (import_reference))
+  (url (import_reference))
+  (comment)
+  (import_statement (import_reference))
+  (comment)
+  (import_statement (import_reference))
+  (import_statement (import_reference))
+)

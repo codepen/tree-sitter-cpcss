@@ -12,6 +12,10 @@
           },
           {
             "type": "SYMBOL",
+            "name": "url"
+          },
+          {
+            "type": "SYMBOL",
             "name": "comment"
           },
           {
@@ -50,6 +54,14 @@
             {
               "type": "STRING",
               "value": "@import"
+            },
+            {
+              "type": "STRING",
+              "value": "@namespace"
+            },
+            {
+              "type": "STRING",
+              "value": "@document"
             },
             {
               "type": "STRING",
@@ -125,21 +137,35 @@
       "members": [
         {
           "type": "STRING",
-          "value": "url"
+          "value": "url("
         },
         {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_quoted_import_reference"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_quoted_import_reference"
+            },
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "PATTERN",
+                "value": "[^)\\n]*"
+              },
+              "named": true,
+              "value": "import_reference"
+            }
+          ]
         },
         {
           "type": "STRING",
           "value": ")"
         }
       ]
+    },
+    "url": {
+      "type": "SYMBOL",
+      "name": "_url"
     },
     "import_reference": {
       "type": "PATTERN",

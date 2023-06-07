@@ -23,6 +23,10 @@
         {
           "type": "string",
           "named": true
+        },
+        {
+          "type": "url",
+          "named": true
         }
       ]
     }
@@ -67,6 +71,21 @@
     }
   },
   {
+    "type": "url",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "import_reference",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "\"",
     "named": false
   },
@@ -95,11 +114,19 @@
     "named": false
   },
   {
+    "type": "@document",
+    "named": false
+  },
+  {
     "type": "@forward",
     "named": false
   },
   {
     "type": "@import",
+    "named": false
+  },
+  {
+    "type": "@namespace",
     "named": false
   },
   {
@@ -119,7 +146,7 @@
     "named": true
   },
   {
-    "type": "url",
+    "type": "url(",
     "named": false
   }
 ]
