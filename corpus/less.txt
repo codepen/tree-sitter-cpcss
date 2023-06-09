@@ -12,11 +12,11 @@ a {
 ---
 
 (doc
-  (import_statement (import_reference))
+  (import_statement (reference))
   (string)
   (import_statement
     (less_keywords (less_keyword) (less_keyword))
-    (import_reference)
+    (reference)
   )
   (string)
 )

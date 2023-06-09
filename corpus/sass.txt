@@ -8,11 +8,11 @@ SASS @import
 @import url("fineprint.css") print
 ---
 (doc
-  (import_statement (import_reference))
-  (import_statement (import_reference))
-  (import_statement (import_reference) (import_reference))
-  (import_statement (import_reference))
-  (import_statement (import_reference))
+  (import_statement (reference))
+  (import_statement (reference))
+  (import_statement (reference) (reference))
+  (import_statement (reference))
+  (import_statement (reference))
 )
 
 ==============================
@@ -25,7 +25,7 @@ SASS @use
   color: white
 ---
 (doc
-  (import_statement (import_reference))
+  (import_statement (reference))
 )
 
 ==============================
@@ -34,6 +34,6 @@ SASS @forward
 @forward 'custom.css'
 ---
 (doc
-  (import_statement (import_reference))
+  (import_statement (reference))
 )
 
