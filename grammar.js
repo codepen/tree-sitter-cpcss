@@ -30,26 +30,28 @@ module.exports = grammar({
         optional(repeat(seq(',', $._imported)))
       ),
 
-    _imported: $ => choice($._url, $._quoted_import_reference),
+    _imported: $ => choice($._url, $._quoted_reference),
 
     _url: $ =>
       seq(
         'url(',
-        choice(
-          $._quoted_import_reference,
-          alias(/[^)\n]*/, $.import_reference)
+        optional(
+          choice(
+            $._quoted_reference,
+            $.reference,
+          )
         ),
         ')'
       ),
 
     url: $ => $._url,
 
-    import_reference: $ => /[^"'\n]*/,
+    reference: $ => /[^'")\n]+/,
 
-    _quoted_import_reference: $ =>
+    _quoted_reference: $ =>
       choice(
-        seq("'", $.import_reference, "'"),
-        seq('"', $.import_reference, '"')
+        seq("'", $.reference, "'"),
+        seq('"', $.reference, '"')
       ),
 
     less_keyword: $ => seq(/\w+/, optional(',')),

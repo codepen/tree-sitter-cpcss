@@ -46,8 +46,8 @@ li:not(:last-child):after
 ---
 (doc
   (comment)
-  (import_statement (import_reference))
-  (import_statement (import_reference))
-  (import_statement (import_reference))
+  (import_statement (reference))
+  (import_statement (reference))
+  (import_statement (reference))
   (string)
 )

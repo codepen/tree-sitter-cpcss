@@ -1,0 +1,2 @@
+url("star.gif");
+url(star.gif);

@@ -128,7 +128,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_quoted_import_reference"
+          "name": "_quoted_reference"
         }
       ]
     },
@@ -143,17 +143,20 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "_quoted_import_reference"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_quoted_reference"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "reference"
+                }
+              ]
             },
             {
-              "type": "ALIAS",
-              "content": {
-                "type": "PATTERN",
-                "value": "[^)\\n]*"
-              },
-              "named": true,
-              "value": "import_reference"
+              "type": "BLANK"
             }
           ]
         },
@@ -167,11 +170,11 @@
       "type": "SYMBOL",
       "name": "_url"
     },
-    "import_reference": {
+    "reference": {
       "type": "PATTERN",
-      "value": "[^\"'\\n]*"
+      "value": "[^'\")\\n]+"
     },
-    "_quoted_import_reference": {
+    "_quoted_reference": {
       "type": "CHOICE",
       "members": [
         {
@@ -183,7 +186,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "import_reference"
+              "name": "reference"
             },
             {
               "type": "STRING",
@@ -200,7 +203,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "import_reference"
+              "name": "reference"
             },
             {
               "type": "STRING",

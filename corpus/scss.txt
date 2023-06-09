@@ -8,11 +8,11 @@ SCSS @import
 @import url("fineprint.css") print;
 ---
 (doc
-  (import_statement (import_reference))
-  (import_statement (import_reference))
-  (import_statement (import_reference) (import_reference))
-  (import_statement (import_reference))
-  (import_statement (import_reference))
+  (import_statement (reference))
+  (import_statement (reference))
+  (import_statement (reference) (reference))
+  (import_statement (reference))
+  (import_statement (reference))
 )
 
 ==============================
@@ -26,7 +26,7 @@ SCSS @use
 }
 ---
 (doc
-  (import_statement (import_reference))
+  (import_statement (reference))
 )
 
 ==============================
@@ -35,6 +35,6 @@ SCSS @forward
 @forward 'custom.css';
 ---
 (doc
-  (import_statement (import_reference))
+  (import_statement (reference))
 )
 
